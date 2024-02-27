@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Components/Home';
 import ItemList from './Components/ItemList';
@@ -9,6 +10,8 @@ import Register from './Components/Register';
 
 
 function App() {
+  const [token, setToken ] = useState(null);
+
   return (
     <div>
       <BrowserRouter>
@@ -18,7 +21,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/MyCart" element={<MyCart />} />
           <Route path="/NavBar" element={<NavBar />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/Register" element={<Register setToken={setToken}/>} />
         </Routes>
       </BrowserRouter>
     </div>
