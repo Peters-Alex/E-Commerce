@@ -14,16 +14,16 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
+    
         <Routes>
+          <Route path="/itemList" element={<ItemList />} />
+          <Route path="/login" element={<Login token={token} />} />
+          <Route path="/myCart" element={<MyCart />} />
+          <Route path="/navBar" element={<NavBar />} />
+          <Route path="/register" element={<Register setToken={setToken}/>} />
           <Route path="/" element={<Home />} />
-          <Route path="/ItemList" element={<ItemList />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/MyCart" element={<MyCart />} />
-          <Route path="/NavBar" element={<NavBar />} />
-          <Route path="/Register" element={<Register setToken={setToken}/>} />
         </Routes>
-      </BrowserRouter>
+   
     </div>
   );
 
