@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLoginMutation } from "../Api"
+import { useLoginMutation } from "../api"
 
 function Login(props) {
     const [userInfo, setUserInfo] = useState({
@@ -11,16 +11,19 @@ function Login(props) {
     const [login] = useLoginMutation();
     const navigate = useNavigate();
 
+    console.log("props", props)
+
     const eventHandler = async (event) => {
         event.preventDefault();
-        const { data, error } = await login(userInfo);
+        const { data, error } = await login (userInfo);
 
         if (error) {
             //error.data
-            setError(error.data);
+            console.log(`error ${JSON.stringify(error.data)}`)
         } else {
             //data/token
-            props.setToken(data.token);
+            props.token;
+            console.log(`data ${JSON.stringify(data.token)}`)
             //Todo: Change to plant list route later
             navigate("/account");
         }

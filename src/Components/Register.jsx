@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useRegisterMutation } from '../Api'
+import { useRegisterMutation } from '../api'
 import { json } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function Register(props) {
     const [userInfo, setUserInfo] = useState({ email: "", username: "", password: "", name: { firstname: "", lastname: "", } }); //{it doesnt match the api in full}
@@ -34,6 +35,7 @@ function Register(props) {
 
     return (
         <div>
+            <NavBar />
             <h1> Register Page </h1>
             {errorMsg ? <p>{errorMsg}</p> : <span />}
             <form onSubmit={eventHandler}> {/*button needs to go on the form so when it completed its submitted*/}

@@ -12,6 +12,8 @@ import Register from './Components/Register';
 function App() {
   const [token, setToken ] = useState(null);
 
+  console.log("token", token)
+
   return (
     <div>
     
