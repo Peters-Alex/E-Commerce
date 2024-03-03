@@ -1,5 +1,5 @@
 import { useProductsQuery } from "../api";
-import Products from "./Products";
+// import Products from "./Products";
 import NavBar from "./NavBar";
 
 export default function ItemList() {
@@ -20,14 +20,16 @@ export default function ItemList() {
             <NavBar />
             <div>
                 <h2>List of Items</h2>
-                {data.map((item) => (
-                    <div key={item.id}>
-                    <p>category: {data.category} </p>
-                    <p>discription:{data.discription} </p>
-                    <p>id: {data.id} </p>
-                    <p> price: {data.price} </p>
-                    <p> rating: {data.rating} </p>
-                    <p> title: {data.title} </p>
+                {data.map((currentItem) => (
+                    <div key={currentItem.id}>
+                    <p> category: {currentItem.category} </p>
+                    <p> description:{currentItem.description} </p>
+                    <p> id: {currentItem.id} </p>
+                    <img src={currentItem.image} /> 
+                    <p> price: {currentItem.price} </p>
+                    <p> rating: {currentItem.rating.rate} </p>
+                    <p> rating count: {currentItem.rating.count} </p>
+                    <p> title: {currentItem.title} </p>
                     </div>
                 ))}
             </div>

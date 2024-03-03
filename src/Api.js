@@ -13,7 +13,10 @@ export const apiSlice = createApi({
             query: (registerUser) => ({
                 url: "/users",
                 method: "POST",
-                body: registerUser,
+                headers: {
+                    "Content-Type": "application/json",
+                  },
+                body: JSON.stringify(registerUser)
             }),
         }),
         login: builder.mutation({

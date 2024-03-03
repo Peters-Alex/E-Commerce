@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useRegisterMutation } from '../api'
-import { json } from "react-router-dom";
+//import { json } from "react-router-dom";
 import NavBar from "./NavBar";
+//import { createActionCreatorInvariantMiddleware } from "@reduxjs/toolkit";
 
-function Register(props) {
+function Register() {
     const [userInfo, setUserInfo] = useState({ email: "", username: "", password: "", name: { firstname: "", lastname: "", } }); //{it doesnt match the api in full}
 
     const [errorMsg, setError] = useState(null)
@@ -12,24 +13,45 @@ function Register(props) {
 
 
     const eventHandler = async (event) => {
-        event.preventDault();
-        const { data, error } = await register(userInfo);
-
-        if (error) {
-            setError(error.data.message);
-            console.log(`error ${JSON.stringify(error.data.message)}`);
-        } else {
-            props.setToken(data.token);
-            console.log(`data ${JSON.stringify(data.token)}`);
-        }
+        event.preventDefault();
+        const response = await register(userInfo);
+        //const { data, error } = await register(userInfo);
+        console.log("This is the response from the registeration API",response.data);
+       
+        // if (error) {
+            //     setError(error.data.message);
+            //     console.log(`error ${JSON.stringify(error.data.message)}`);
+            // } else {
+        //     console.log(response)
+        //     //props.setToken(data.token);
+        //     //console.log(`data ${JSON.stringify(data.token)}`);
+        // }
     };
 
     const onUserInput = (e) => {
         if (errorMsg) {
             setError(null);
         }
-        console.log(JSON.stringify(userInfo));
-        setUserInfo({ ...userInfo, [e.target.name]: e.target.value }); //... is my spread operator
+        const { name, value } = e.target;
+
+        //     console.log(JSON.stringify(userInfo));
+        //     setUserInfo({ ...userInfo, [e.target.name.firstname]: e.target.value }); //... is my spread operator
+
+        //checking to see if the input is for the name object
+        if (name === "firstname" || name === "lastname") {
+            setUserInfo(prevState => ({
+                ...prevState,
+                name: {
+                    ...prevState.name,
+                    [name]: value,
+                },
+            }))
+        } else {
+            setUserInfo(prevState => ({
+               ...prevState,
+               [name]: value, 
+            }))
+        }
     };
 
 
@@ -46,9 +68,9 @@ function Register(props) {
                 Email
                 <input name="email" type="email" placeholder="Email" value={userInfo.email} onChange={onUserInput} /> <br></br>
                 First Name
-                <input name="firstname" type="text" placeholder="FirstName" value={userInfo.firstname} onChange={onUserInput} /> <br></br>
+                <input name="firstname" type="text" placeholder="FirstName" value={userInfo.name.firstname} onChange={onUserInput} /> <br></br>
                 Last Name
-                <input name="lastname" type="test" placeholder="LastName" value={userInfo.lastname} onChange={onUserInput} /> <br></br>
+                <input name="lastname" type="test" placeholder="LastName" value={userInfo.name.lastname} onChange={onUserInput} /> <br></br>
                 <button>Submit</button>
             </form>
         </div>
