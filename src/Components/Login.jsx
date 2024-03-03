@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../api"
+import NavBar from "./NavBar";
 
 function Login(props) {
     const [userInfo, setUserInfo] = useState({
@@ -11,8 +12,6 @@ function Login(props) {
     const [login] = useLoginMutation();
     const navigate = useNavigate();
 
-    console.log("props", props)
-
     const eventHandler = async (event) => {
         event.preventDefault();
         const { data, error } = await login (userInfo);
@@ -22,7 +21,7 @@ function Login(props) {
             console.log(`error ${JSON.stringify(error.data)}`)
         } else {
             //data/token
-            props.token;
+            props.setToken(data.token);
             console.log(`data ${JSON.stringify(data.token)}`)
             //Todo: Change to plant list route later
             navigate("/account");
@@ -37,6 +36,7 @@ function Login(props) {
     
     return (
         <div>
+            <NavBar />
             <h2> Login </h2>
             {/* error message*/}
             {errorMsg ? <p>{errorMsg}</p> : <span />}

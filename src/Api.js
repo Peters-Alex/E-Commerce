@@ -23,15 +23,13 @@ export const apiSlice = createApi({
                 body: loginUser,
             }),
         }),
-        getItems: builder.mutation({
-            query: (singleItem) => ({
-                url: "/users",
-                method: "POST",
-                body: singleItem,
+        products: builder.query({
+            query: () => ({
+                url: "/products",
             }),
         }),
     }) 
 })
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useRegisterMutation, useLoginMutation, usegetItemsMutation } = apiSlice;
+export const { useRegisterMutation, useLoginMutation, useProductsQuery } = apiSlice;

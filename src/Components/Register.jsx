@@ -55,3 +55,5 @@ function Register(props) {
     );
 }
 export default Register;
+
+// When I try to register it takes my information and passes it through my url. 

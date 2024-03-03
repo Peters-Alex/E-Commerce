@@ -25,7 +25,7 @@ function NavBar(props) {
             <NavLink to="/register">Register</NavLink> <br></br>
             <NavLink to="/ItemList">Item List</NavLink> <br></br>
             <NavLink to="/MyCart">MyCart</NavLink> <br></br>
-            <a onClick="/login">Login</a>
+            <a onClick={() => navigate("/login")}>Login</a>
         </nav>
     );
 }

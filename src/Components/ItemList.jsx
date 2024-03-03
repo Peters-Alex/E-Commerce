@@ -1,11 +1,39 @@
+import { useProductsQuery } from "../api";
+import Products from "./Products";
+import NavBar from "./NavBar";
+
+export default function ItemList() {
+    const { data, error, isLoading } = useProductsQuery();
 
 
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
 
-function ItemList() {
-    return(
-        <div> 
-            <h1> ItemList Page </h1>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, voluptatibus earum beatae itaque delectus ex sapiente ab voluptatem voluptatum quibusdam repellendus pariatur harum tempore molestiae iure ea minima dolores dolore.</p>
-        </div>
-)}
-export default ItemList;
+    if (error) {
+        return <h3>{error.data.message}</h3>;
+    }
+    console.log("data", data)
+    
+    return (
+        <section>
+            <NavBar />
+            <div>
+                <h2>List of Items</h2>
+                {data.map((item) => (
+                    <div key={item.id}>
+                    <p>category: {data.category} </p>
+                    <p>discription:{data.discription} </p>
+                    <p>id: {data.id} </p>
+                    <p> price: {data.price} </p>
+                    <p> rating: {data.rating} </p>
+                    <p> title: {data.title} </p>
+                    </div>
+                ))}
+            </div>
+        </section>
+        );
+    }
+
+// My item list are not rendering on the page.I thiknk that it is an error in how im fetching my data. 
+// The item key seems to be wrong withing the object.

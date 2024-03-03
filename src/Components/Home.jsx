@@ -32,3 +32,5 @@ function Home() {
         </div>
 )}
 export default Home;
+
+//My image is not loading write need correct sizing.
