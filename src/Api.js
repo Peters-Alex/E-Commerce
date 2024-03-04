@@ -31,8 +31,13 @@ export const apiSlice = createApi({
                 url: "/products",
             }),
         }),
+        singleProduct: builder.query({
+            query: (id) => ({
+                url: `/products/${id}`
+            }),
+        }),
     }) 
 })
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useRegisterMutation, useLoginMutation, useProductsQuery } = apiSlice;
+export const { useRegisterMutation, useLoginMutation, useProductsQuery, useSingleProductQuery} = apiSlice;

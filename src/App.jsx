@@ -20,11 +20,11 @@ function App() {
     
         <Routes>
           <Route path="/itemList" element={<ItemList />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<Products />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/myCart" element={<MyCart />} />
           <Route path="/navBar" element={<NavBar />} />
-          <Route path="/account" element={<Account />} />
+          <Route path="/account" element={<Account setToken={setToken}/>} />
           <Route path="/register" element={<Register setToken={setToken}/>} />
           <Route path="/" element={<Home />} />
         </Routes>

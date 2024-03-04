@@ -1,15 +1,29 @@
 
-import NavBar from "./NavBar"
 
-function Account() {
+import { useNavigate } from 'react-router-dom';
+import NavBar from './NavBar';
+
+function Account(props) {
+    const navigate = useNavigate();
     
+    
+    const eventHandler = async (event) => {
+        event.preventDefault();
+
+        props.setToken(null)
+        
+        navigate("/");
+    }; 
 
     return(
         <section>
         <NavBar />
         <div> 
             <h1> Account Page </h1>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, voluptatibus earum beatae itaque delectus ex sapiente ab voluptatem voluptatum quibusdam repellendus pariatur harum tempore molestiae iure ea minima dolores dolore.</p>
+            <form onSubmit={eventHandler}>
+            <button> Logout </button>
+            </form>
+
         </div>
         </section>
     )
