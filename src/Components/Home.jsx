@@ -1,10 +1,15 @@
-import React from "react";
+// import React from "react";
 import NavBar from "./NavBar";
+// import { useState } from 'react'
+import Checkbox from "./Checkbox";
 
-function Home() {
- 
+function Home({labelOn, labelOff}) { 
+
+
+
     return(
         <div className="Home">
+            <Checkbox labelOn={labelOn} labelOff={labelOff}/>
             <NavBar />
             <header>
                 <h1> Welcome Home </h1>
@@ -12,7 +17,7 @@ function Home() {
             </header>
             <main>
                 <section>
-                    <img src="/shopping.jpg"/>
+                    <img src="/shopping.jpg" alt="shopping" d/>
                 </section>
             </main>
 
