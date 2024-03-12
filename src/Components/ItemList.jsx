@@ -1,20 +1,31 @@
+import { useEffect } from "react";
 import { useProductsQuery } from "../api";
+import Cart from "./Cart";
 // import Products from "./Products";
 import NavBar from "./NavBar";
 
-export default function ItemList() {
+
+
+export default function ItemList(props) {
     const { data, error, isLoading } = useProductsQuery();
-
-
+    
     if (isLoading) {
         return <p>Loading...</p>;
     }
-
+    
     if (error) {
         return <h3>{error.data.message}</h3>;
     }
     console.log("data", data)
     
+    const handleClick = (event) => {
+        const productId =  event.target.value
+        const product = data.find(item => item.id == productId)
+        
+        props.setCart(product) 
+        // console.log(props.cart)
+    }
+
     return (
         <section>
             <NavBar />
@@ -26,11 +37,15 @@ export default function ItemList() {
                     <p> description:{currentItem.description} </p>
                     <p> id: {currentItem.id} </p>
                     <img src={currentItem.image} /> 
-                    <p> price: {currentItem.price} </p>
+                    <p> price: ${currentItem.price} </p>
                     <p> rating: {currentItem.rating.rate} </p>
                     <p> rating count: {currentItem.rating.count} </p>
                     <p> title: {currentItem.title} </p>
+                        <button value ={currentItem.id } onClick={handleClick}>
+                            Add to Cart
+                        </button>
                     </div>
+                    
                 ))}
             </div>
         </section>

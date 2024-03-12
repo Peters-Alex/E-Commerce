@@ -1,4 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { ShoppingCart } from 'phosphor-react';
+
  
 
 function NavBar(props) {
@@ -24,7 +26,7 @@ function NavBar(props) {
             <NavLink to="/"> Home </NavLink> <br></br>
             <NavLink to="/register">Register</NavLink> <br></br>
             <NavLink to="/ItemList">Item List</NavLink> <br></br>
-            <NavLink to="/MyCart">MyCart</NavLink> <br></br>
+            <NavLink to="/Cart">Cart<ShoppingCart /> </NavLink> <br></br>
             <a onClick={() => navigate("/login")}>Login</a>
         </nav>
     );
