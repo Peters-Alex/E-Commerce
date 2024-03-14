@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 // import { useState } from 'react'
 import Checkbox from "./Checkbox";
 import Cart from "./Cart";
-
+import "./styles/Home.css";
 
 function Home({labelOn, labelOff,}) { 
 
@@ -19,7 +19,7 @@ function Home({labelOn, labelOff,}) {
             </header>
             <main>
                 <section>
-                    <img src="/shopping.jpg" alt="shopping"   style={{ width: '100%' }} />
+                    <img src="/shopping.jpg" alt="shopping" />
                 </section>
             </main>
 

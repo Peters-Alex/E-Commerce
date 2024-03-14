@@ -18,14 +18,6 @@ function Register() {
         //const { data, error } = await register(userInfo);
         console.log("This is the response from the registeration API",response.data);
        
-        // if (error) {
-            //     setError(error.data.message);
-            //     console.log(`error ${JSON.stringify(error.data.message)}`);
-            // } else {
-        //     console.log(response)
-        //     //props.setToken(data.token);
-        //     //console.log(`data ${JSON.stringify(data.token)}`);
-        // }
     };
 
     const onUserInput = (e) => {

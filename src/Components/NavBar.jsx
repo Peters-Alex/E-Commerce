@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { ShoppingCart } from 'phosphor-react';
+import "./styles/NavBar.css";
 
  
 
@@ -23,10 +24,11 @@ function NavBar(props) {
     return(
         //This is for my Authenticated user
         <nav>
-            <NavLink to="/"> Home </NavLink> <br></br>
+            <NavLink to="/" className="bar"> Home </NavLink> <br></br>
             <NavLink to="/register">Register</NavLink> <br></br>
             <NavLink to="/ItemList">Item List</NavLink> <br></br>
             <NavLink to="/Cart">Cart<ShoppingCart /> </NavLink> <br></br>
+            <NavLink to="Checkout">Checkout </NavLink> <br></br>
             <a onClick={() => navigate("/login")}>Login</a>
         </nav>
     );

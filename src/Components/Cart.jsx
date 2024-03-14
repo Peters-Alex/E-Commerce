@@ -1,21 +1,21 @@
 import React from "react";
+import ItemList from "./ItemList";
+import NavBar from "./NavBar";
 
 
-
-const Cart = (props) => {
-    console.log(props.cart)
-
-    return (
-        <div className="Cart">
+const Cart = ({ cart }) => {
+console.log(cart)
+ 
+     return (
+        <section>
+            <NavBar />
+         <div className="Cart">
             <h1>Shopping Cart</h1>
-            {/* <ul>
-                {cartItems.map((item) => (
-                    <li key={item.id}>
-                        {item.name} - Quantity: {item.quantity} - Price: {item.price}
-                    </li>
-                ))};
-            </ul> */}
+            <ul>
+    
+            </ul>
         </div>
+        </section>
     );
 };
 

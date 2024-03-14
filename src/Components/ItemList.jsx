@@ -8,7 +8,7 @@ import NavBar from "./NavBar";
 
 export default function ItemList(props) {
     const { data, error, isLoading } = useProductsQuery();
-    
+    console.log(props.cart)
     if (isLoading) {
         return <p>Loading...</p>;
     }
@@ -19,11 +19,11 @@ export default function ItemList(props) {
     console.log("data", data)
     
     const handleClick = (event) => {
-        const productId =  event.target.value
-        const product = data.find(item => item.id == productId)
+        const productId = event.target.value;
+        const product = data.find((item) => item.id == productId);
         
-        props.setCart(product) 
-        // console.log(props.cart)
+        props.setCart((Cart) => [...Cart, product]); 
+        console.log(props.cart);
     }
 
     return (
