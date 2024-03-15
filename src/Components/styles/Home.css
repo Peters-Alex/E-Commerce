@@ -3,3 +3,29 @@ header {
     font-style: oblique;
     text-align: center;
 }
+img {
+    height: 470px;
+    width: 1500px;
+}
+
+h2 {
+    text-align: center;
+    border-color: darkblue;
+    border-radius: 100px;
+
+}
+li {    
+    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: larger;
+    font-weight: bold;
+
+}
+
+p {
+    flex-direction: column;
+    padding: 10px;
+    text-align:center;
+    flex-wrap: wrap;
+}

@@ -3,6 +3,7 @@ import { useRegisterMutation } from '../api'
 //import { json } from "react-router-dom";
 import NavBar from "./NavBar";
 //import { createActionCreatorInvariantMiddleware } from "@reduxjs/toolkit";
+import "./styles/Register.css"
 
 function Register() {
     const [userInfo, setUserInfo] = useState({ email: "", username: "", password: "", name: { firstname: "", lastname: "", } }); //{it doesnt match the api in full}
@@ -49,7 +50,9 @@ function Register() {
 
     return (
         <div>
-            <NavBar />
+               <NavBar />
+               <img src="src/assets/kaleb-tapp-J59wWPn09BE-unsplash.jpg"></img>
+         
             <h1> Register Page </h1>
             {errorMsg ? <p>{errorMsg}</p> : <span />}
             <form onSubmit={eventHandler}> {/*button needs to go on the form so when it completed its submitted*/}

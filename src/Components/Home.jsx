@@ -5,6 +5,7 @@ import Checkbox from "./Checkbox";
 import Cart from "./Cart";
 import "./styles/Home.css";
 
+
 function Home({labelOn, labelOff,}) { 
 
 
@@ -14,24 +15,26 @@ function Home({labelOn, labelOff,}) {
             <Checkbox labelOn={labelOn} labelOff={labelOff}/>
             <NavBar />
             <header>
-                <h1> Welcome Home </h1>
-                <p> The future of Shoping in now</p>
+                <h1> TrendSphere </h1>
+                <h2> The future of fashion design delivered right to your finger tips </h2>
             </header>
             <main>
                 <section>
-                    <img src="/shopping.jpg" alt="shopping" />
+                    <img src="src/assets/35187215-D078-4633-AE23-9DD7A0269CF3_1_105_c.jpeg" alt="shopping"></img> 
                 </section>
             </main>
 
             <section>
-                <h2> Items of the week </h2>
+                <h2>  </h2>
                 <ul>
                     <li> Who We Are </li>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa debitis dignissimos quo neque aliquid unde. Soluta, minima nemo illo iusto quos laborum, laudantium officiis dolor quae omnis explicabo est.</p>
+                        <p> Our story began with a vision: to create a dynamic platform that seamlessly integrates cutting-edge technology with the artistry of fashion. We're not just a website; we're a destination for trendsetters, tastemakers, and seekers of sartorial innovation.</p>
                     <li> Why We Serve</li>
-                        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam sed maxime assumenda tempore dolore asperiores quaerat porro unde, est harum odio suscipit repellendus ratione, perferendis reiciendis quibusdam quia voluptatibus soluta.</p>
+                        <p> Step into our virtual showroom, where curated collections curated by our team of fashion aficionados await. From haute couture to street style, we've curated the latest looks from across the globe, ensuring that you stay ahead of the curve with every purchase.
+
+                        But TrendSphere is more than just a marketplace—it's a community. Connect with fellow fashion enthusiasts, share style inspiration, and discover emerging designers who are shaping the future of fashion.</p>
                     <li> Our Commitment </li>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident saepe eos quia incidunt at unde, et sed quasi. Eveniet nisi doloribus molestiae. Repellendus unde aliquid esse suscipit provident ea deserunt.</p>
+                        <p> Join us as we navigate the ever-evolving landscape of style, where the boundaries between the physical and digital worlds blur, and fashion becomes a form of self-expression like never before. Welcome to TrendSphere—where the future of fashion awaits.</p>
                 </ul>
             </section>
 
