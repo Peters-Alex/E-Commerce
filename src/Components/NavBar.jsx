@@ -17,18 +17,19 @@ function NavBar(props) {
             <nav>
                 <NavLink to="/"> Home </NavLink>
                 <NavLink to="/Login">Login</NavLink>
+                <NavLink to="/ItemList">Item List</NavLink> <br></br>
+                {/* <NavLink to="/Cart">Cart<ShoppingCart /> </NavLink> <br></br> */}
                 <a onClick={logoutUser}>Logout</a>
             </nav>
         );
     }
     return(
-        //This is for my Authenticated user
+        //This is for my nonAuthenticated user
         <nav>
             <NavLink to="/" className="bar"> Home </NavLink> <br></br>
             <NavLink to="/register">Register</NavLink> <br></br>
             <NavLink to="/ItemList">Item List</NavLink> <br></br>
-            <NavLink to="/Cart">Cart<ShoppingCart /> </NavLink> <br></br>
-            <NavLink to="Checkout">Checkout </NavLink> <br></br>
+            <NavLink to="/Cart">Cart<ShoppingCart /> </NavLink> <br></br> 
             <a onClick={() => navigate("/login")}>Login</a>
         </nav>
     );

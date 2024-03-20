@@ -1,22 +1,36 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useProductsQuery } from "../api";
 import Cart from "./Cart";
-// import Products from "./Products";
 import NavBar from "./NavBar";
+import "./styles/ItemList.css";
 
 
 
 export default function ItemList(props) {
-    const { data, error, isLoading } = useProductsQuery();
-    console.log(props.cart)
-    if (isLoading) {
-        return <p>Loading...</p>;
-    }
+    const { data = [], error, isLoading, } = useProductsQuery();
+    const [filteredItems, setFilteredItems] = useState([]);
+    const [sortItems, setSortItems] = useState("title")
+    const [isAscending, setIsAscending] = useState(true);
+ 
     
-    if (error) {
-        return <h3>{error.data.message}</h3>;
-    }
-    console.log("data", data)
+    useEffect(() => {
+        if(!isLoading && !error && data) {
+            setFilteredItems(data)
+        }
+    }, [data, error, isLoading]);
+
+    useEffect(() => {
+        console.log(data)
+        const sorted = [...data].sort((a,b) => {
+            const aValue = a[sortItems];
+            const bValue = b[sortItems];
+            return isAscending ? aValue - bValue : bValue - aValue;
+        });
+        console.log(sortItems)
+        setFilteredItems(sorted);
+    }, [sortItems, isAscending]);
+
+
     
     const handleClick = (event) => {
         const productId = event.target.value;
@@ -26,12 +40,19 @@ export default function ItemList(props) {
         console.log(props.cart);
     }
 
+ 
+
     return (
         <section>
             <NavBar />
             <div>
                 <h2>List of Items</h2>
-                {data.map((currentItem) => (
+                <select value={sortItems} onChange={(event) => setSortItems(event.target.value)}>
+                    <option value="title">Name</option>
+                    <option value="price">Price</option>
+                </select>
+                <ul className="items-container">
+                {filteredItems.map((currentItem) => (
                     <div key={currentItem.id}>
                     <p> category: {currentItem.category} </p>
                     <p> description:{currentItem.description} </p>
@@ -44,10 +65,13 @@ export default function ItemList(props) {
                         <button value ={currentItem.id } onClick={handleClick}>
                             Add to Cart
                         </button>
-                    </div>
-                    
-                ))}
+                
+                        </div>                    
+                     ))}
+                </ul>  
+                       
             </div>
+
         </section>
         );
     }

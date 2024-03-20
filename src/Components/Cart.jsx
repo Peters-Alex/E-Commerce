@@ -1,25 +1,36 @@
 import React from "react";
 import ItemList from "./ItemList";
 import NavBar from "./NavBar";
+import {useState} from "react"
 
 
-const Cart = ({ cart, updateQuantity }) => {
-console.log(cart)
+const Cart = ({ cart: intialCart, updateQuantity }) => {
+// console.log(cart)
+    const [cartItems, setCartItems] = useState(intialCart)
+
     const handleIncreaseQuantity = (selectedItem) => { 
         updateQuantity(selectedItem, 1);
     };    
     const handleDecreasedQuantity = (selectedItem) => {
         updateQuantity(selectedItem, -1);
     };
+    const handleCheckout = () => {
+        alert("Thank you for your purchase! Your items will be shipped soon.");
+    };
     
- 
+    const removeItemFromCart = (itemId) => {
+        const updatedCart = cartItems.filter((item) => item.id !== itemId);
+        setCartItems(updatedCart);
+        console.log(updatedCart)
+      };
+
      return (
         <section>
             <NavBar />
             <div>
                 <h1>Shopping Cart</h1>
                 <ul>
-                 {cart.map((selectedItem) => (      
+                 {cartItems.map((selectedItem) => (      
                     <li key={selectedItem.id}>
                     <p> category: {selectedItem.category} </p>
                     <p> description:{selectedItem.description} </p>
@@ -31,7 +42,10 @@ console.log(cart)
                     <p> title: {selectedItem.title} </p> 
                     {selectedItem.name} - Quantity: {selectedItem.quantity} - Price: {selectedItem.price}<br></br>
                     <button onClick={() => handleIncreaseQuantity(selectedItem.id)}>+</button>
-                    <button onClick={() => handleDecreasedQuantity(selectedItem.id)}>-</button>
+                    <button onClick={() => handleDecreasedQuantity(selectedItem.id)}>-</button> <br></br>
+                    <button onClick={handleCheckout}> Checkout</button>
+                    <button onClick={() => removeItemFromCart(selectedItem.id)}> Remove Item</button>
+
                     </li>
                 ))};
             </ul>
