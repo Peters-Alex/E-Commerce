@@ -13,27 +13,29 @@ import Products from "./Components/Products";
 
 
 function App() {
-  const [token, setToken ] = useState(null);
+  const [token, setToken ] = useState(false);
   const [cart, setCart ] = useState([])
-  
-
 
   console.log("token", token)
 
   return (
     <div>
-    
+        <NavBar token={token} setToken={setToken} />
+   
         <Routes>
-          <Route path="/itemList" element={<ItemList setCart={setCart} cart={cart} />} />
+          {token ? (
+            <Route path="/itemList" element={<ItemList setCart={setCart} cart={cart} token={token} />} />
+          ): null }
           <Route path="/products/:id" element={<Products />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
-          <Route path="/Cart" element={<Cart setCart={setCart} cart={cart} />} />
-          <Route path="/navBar" element={<NavBar />} />
+          {token ? (
+            <Route path="/Cart" element={<Cart setCart={setCart} cart={cart} token={token} />} />
+          ) : null }
           <Route path="/account" element={<Account setToken={setToken}/>} />
           <Route path="/register" element={<Register setToken={setToken}/>} />
           <Route path="/" element={<Home />} />
         </Routes>
-   
+
     </div>
   );
 

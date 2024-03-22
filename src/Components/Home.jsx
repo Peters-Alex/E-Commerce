@@ -13,7 +13,7 @@ function Home({labelOn, labelOff,}) {
     return(
         <div className="Home">
             <Checkbox labelOn={labelOn} labelOff={labelOff}/>
-            <NavBar />
+            {/* <NavBar /> */}
             <header>
                 <h1> TrendSphere </h1>
                 <h2> The future of fashion design delivered right to your finger tips </h2>

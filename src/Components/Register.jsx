@@ -50,7 +50,7 @@ function Register() {
 
     return (
         <div>
-               <NavBar />
+               {/* <NavBar /> */}
                <img src="src/assets/kaleb-tapp-J59wWPn09BE-unsplash.jpg"></img>
          
             <h1> Register Page </h1>

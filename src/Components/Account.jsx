@@ -17,7 +17,7 @@ function Account(props) {
 
     return(
         <section>
-        <NavBar />
+        {/* <NavBar /> */}
         <div> 
             <h1> Account Page </h1>
             <form onSubmit={eventHandler}>

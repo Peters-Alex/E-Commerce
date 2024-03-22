@@ -9,7 +9,9 @@ const Cart = ({ cart: intialCart, updateQuantity }) => {
     const [cartItems, setCartItems] = useState(intialCart)
 
     const handleIncreaseQuantity = (selectedItem) => { 
-        updateQuantity(selectedItem, 1);
+        const updateItem = cartItems.map(item => item.id === selectedItem.id ? { ...item, quantity: item.quantity + 1} : item);
+        setCartItems(updateItem);
+        console.log(updateItem)
     };    
     const handleDecreasedQuantity = (selectedItem) => {
         updateQuantity(selectedItem, -1);
@@ -21,7 +23,7 @@ const Cart = ({ cart: intialCart, updateQuantity }) => {
     const removeItemFromCart = (itemId) => {
         const updatedCart = cartItems.filter((item) => item.id !== itemId);
         setCartItems(updatedCart);
-        console.log(updatedCart)
+        console.log(updatedCart);
       };
 
      return (

@@ -36,7 +36,7 @@ function Login(props) {
     
     return (
         <div>
-            <NavBar />
+            {/* <NavBar /> */}
             <h2> Login </h2>
             {/* error message*/}
             {errorMsg ? <p>{errorMsg}</p> : <span />}
