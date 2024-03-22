@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRegisterMutation } from '../api'
+import { useRegisterMutation } from '../redux/api'
 //import { json } from "react-router-dom";
 import NavBar from "./NavBar";
 //import { createActionCreatorInvariantMiddleware } from "@reduxjs/toolkit";

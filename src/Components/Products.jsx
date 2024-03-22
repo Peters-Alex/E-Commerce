@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { useSingleProductQuery } from "../api";
+import { useSingleProductQuery } from "../redux/api";
 
 function Products (){
     const { id } = useParams();

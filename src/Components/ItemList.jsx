@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useProductsQuery } from "../api";
+import { useProductsQuery } from "../redux/api";
 import Cart from "./Cart";
 import NavBar from "./NavBar";
 import "./styles/ItemList.css";

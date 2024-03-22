@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLoginMutation } from "../api"
+import { useLoginMutation } from "../redux/api"
 import NavBar from "./NavBar";
 
 function Login(props) {
