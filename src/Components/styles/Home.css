@@ -1,31 +1,36 @@
-header {
+.home > header  {
     font-size: larger;
     font-style: oblique;
     text-align: center;
 }
+
+h1 {
+    font-style: oblique;
+   
+}
 img {
-    height: 470px;
-    width: 1500px;
+
+max-width: fit-content;
+max-width: fit-content;
+
+    
+    }
+div {
+    background-color: rgb(215, 245, 245);
 }
 
-h2 {
-    text-align: center;
-    border-color: darkblue;
-    border-radius: 100px;
-
+th {
+font-style: italic;
+font-weight: bold;
 }
-li {    
-    flex-direction: column;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: larger;
-    font-weight: bold;
-
+/* .a {
+   
+    border-bottom: 100px;
 }
+.b {
 
-p {
-    flex-direction: column;
-    padding: 10px;
-    text-align:center;
-    flex-wrap: wrap;
+    word-wrap: break-word
 }
+.c {
+    word-wrap: break-word;
+} */
