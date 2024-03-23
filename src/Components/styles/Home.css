@@ -9,14 +9,13 @@ h1 {
    
 }
 img {
-
-max-width: fit-content;
-max-width: fit-content;
+max-inline-size: none;
+height: auto;
 
     
     }
 div {
-    background-color: rgb(215, 245, 245);
+    background-color: rgb(189, 244, 244);
 }
 
 th {

@@ -1,10 +1,20 @@
-img {
-    width: 1460px;
-    height: 470px;
-}
 div {
    
     text-align: center;
     font-size: larger;
+}
+img {
+    width: 1450px;
+    height: 270px; 
+    max-inline-size: none;
+}
+form {
+    background-color: aliceblue;
+    margin: 30rem;
+    margin-top: 1rem;
+    margin-bottom: auto;
+    width: 20rem;
+    font-style: normal;
+    font-size: x-large;
     
 }

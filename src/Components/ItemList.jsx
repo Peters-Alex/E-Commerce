@@ -44,7 +44,7 @@ export default function ItemList(props) {
 
     return (
         <section>
-            <NavBar />
+
             <div>
                 <h2>List of Items</h2>
                 <select value={sortItems} onChange={(event) => setSortItems(event.target.value)}>

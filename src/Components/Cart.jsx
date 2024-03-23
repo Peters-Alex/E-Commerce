@@ -28,7 +28,7 @@ const Cart = ({ cart: intialCart, updateQuantity }) => {
 
      return (
         <section>
-            <NavBar />
+            {/* <NavBar /> */}
             <div>
                 <h1>Shopping Cart</h1>
                 <ul>

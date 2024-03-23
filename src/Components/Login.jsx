@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../redux/api"
 import NavBar from "./NavBar";
+import "./styles/Login.css";
 
 function Login(props) {
     const [userInfo, setUserInfo] = useState({
@@ -14,7 +15,7 @@ function Login(props) {
 
     const eventHandler = async (event) => {
         event.preventDefault();
-        const { data, error } = await login (userInfo);
+        const { data, error } = await login(userInfo);
 
         if (error) {
             //error.data
@@ -31,23 +32,22 @@ function Login(props) {
         if (errorMsg) {
             setError(null);
         }
-        setUserInfo({...userInfo, [e.target.name]: e.target.value});
+        setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
     };
-    
+
     return (
-        <div>
-            {/* <NavBar /> */}
-            <h2> Login </h2>
+        <div className="Login">
             {/* error message*/}
             {errorMsg ? <p>{errorMsg}</p> : <span />}
             <form onSubmit={eventHandler}> {/*button needs to go on the form so when it completed its submitted*/}
+            <h2> Welcome Back </h2>
                 <label>
-                Username
-                <input type="text" placeholder="Username" name="username" value={userInfo.username} onChange={onUserInput} /> <br></br>
+                    Username
+                    <input type="text" placeholder="Username" name="username" value={userInfo.username} onChange={onUserInput} /> <br></br>
                 </label>
                 <label htmlFor="password">Password</label>
                 <input name="password" type="password" placeholder="Password" value={userInfo.password} onChange={onUserInput} /> <br></br>
-                <button>Submit</button>
+                <button>SIGN IN </button>
             </form>
         </div>
     );
