@@ -8,13 +8,17 @@ img {
     height: 270px; 
     max-inline-size: none;
 }
-form {
-    background-color: aliceblue;
+.Register > form {
+    background-color: rgb(191, 233, 234);
     margin: 30rem;
     margin-top: 1rem;
-    margin-bottom: auto;
     width: 20rem;
     font-style: normal;
-    font-size: x-large;
+    font-size: large;
+    display:grid;
+    color: black;
+    border-color: black;
+    border-style: double;
+    border-width: 10px;
     
 }

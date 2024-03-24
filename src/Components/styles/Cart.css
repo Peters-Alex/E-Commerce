@@ -1,8 +1,9 @@
-.Login {
+.div.mycart {
     width: 1440px;
     height: 700px;
     border-style: double;
     border-color: black;
-    color:black
-    
+}
+p{
+  color: black;
 }

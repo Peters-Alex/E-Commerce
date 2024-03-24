@@ -39,7 +39,7 @@ function Register() {
 
 
     return (
-        <div>
+        <div className="Register">
             <img src="src/assets/kaleb-tapp-J59wWPn09BE-unsplash.jpg"></img>
 
             {errorMsg ? <p>{errorMsg}</p> : <span />}

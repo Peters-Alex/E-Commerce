@@ -2,25 +2,29 @@
     font-size: larger;
     font-style: oblique;
     text-align: center;
+    
 }
 
 h1 {
     font-style: oblique;
-   
+    color: black  
+}
+h2 {
+    color: black
 }
 img {
 max-inline-size: none;
 height: auto;
 
-    
-    }
+}
 div {
-    background-color: rgb(189, 244, 244);
+    background-color: rgb(196, 247, 247);
 }
 
 th {
 font-style: italic;
 font-weight: bold;
+color: black;
 }
 /* .a {
    

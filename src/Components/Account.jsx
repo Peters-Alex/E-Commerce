@@ -2,6 +2,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
+import "./styles/Account.css";
 
 function Account(props) {
     const navigate = useNavigate();
@@ -18,10 +19,11 @@ function Account(props) {
     return(
         <section>
         {/* <NavBar /> */}
-        <div> 
-            <h1> Account Page </h1>
+        <div className="AccountStyle"> 
+     
             <form onSubmit={eventHandler}>
-            <button> Logout </button>
+            <h1> Account Info </h1><button> Logout </button>
+            
             </form>
 
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import ItemList from "./ItemList";
 import NavBar from "./NavBar";
 import {useState} from "react"
-
+import "./styles/Cart.css";
 
 const Cart = ({ cart: intialCart, updateQuantity }) => {
 // console.log(cart)
@@ -29,7 +29,7 @@ const Cart = ({ cart: intialCart, updateQuantity }) => {
      return (
         <section>
             {/* <NavBar /> */}
-            <div>
+            <div className="mycart">
                 <h1>Shopping Cart</h1>
                 <ul>
                  {cartItems.map((selectedItem) => (      

@@ -44,8 +44,7 @@ export default function ItemList(props) {
 
     return (
         <section>
-
-            <div>
+            <div className="wrapper">
                 <h2>List of Items</h2>
                 <select value={sortItems} onChange={(event) => setSortItems(event.target.value)}>
                     <option value="title">Name</option>
