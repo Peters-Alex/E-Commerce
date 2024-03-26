@@ -1,8 +1,35 @@
 
 .wrapper {
 color: black;
+background-color: white
 
 }
+.items-container{
+ display: grid;
+ grid-template-columns: auto auto auto ;
+ margin-bottom: 0%;
+ row-gap: 1%;
+ 
+
+    
+}
+.productItems {
+    width: 55%;
+    font-size: small; 
+    background-color:white;
+    border-style: double; 
+    padding: 20%; 
+    padding: 1%;
+    text-align: center;     
+
+}
+.ProductImg {
+    width: 150px;
+    
+    
+}
+
+
 
 
 

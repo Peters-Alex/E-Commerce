@@ -3,6 +3,7 @@ import ItemList from "./ItemList";
 import NavBar from "./NavBar";
 import {useState} from "react"
 import "./styles/Cart.css";
+import {Star} from 'phosphor-react' 
 
 const Cart = ({ cart: intialCart, updateQuantity }) => {
 // console.log(cart)
@@ -30,18 +31,18 @@ const Cart = ({ cart: intialCart, updateQuantity }) => {
         <section>
             {/* <NavBar /> */}
             <div className="mycart">
-                <h1>Shopping Cart</h1>
                 <ul>
+                <h1>Shopping Cart</h1>
                  {cartItems.map((selectedItem) => (      
                     <li key={selectedItem.id}>
-                    <p> category: {selectedItem.category} </p>
-                    <p> description:{selectedItem.description} </p>
-                    <p> id: {selectedItem.id} </p>
-                    <img src={selectedItem.image} /> 
-                    <p> price: ${selectedItem.price} </p>
-                    <p> rating: {selectedItem.rating.rate} </p>
-                    <p> rating count: {selectedItem.rating.count} </p>
-                    <p> title: {selectedItem.title} </p> 
+                    <p> Category: {selectedItem.category} </p>
+                    <p> Description:{selectedItem.description} </p>
+                    <p> Id: {selectedItem.id} </p>
+                    <img className="cartimg"src={selectedItem.image} /> 
+                    <p> Price: ${selectedItem.price} </p>
+                    <p> Rating: {selectedItem.rating.rate} </p>
+                    <p> <Star/><Star/><Star/><Star/> Rating count: {selectedItem.rating.count} </p>
+                    <p> Title: {selectedItem.title} </p> 
                     {selectedItem.name} - Quantity: {selectedItem.quantity} - Price: {selectedItem.price}<br></br>
                     <button onClick={() => handleIncreaseQuantity(selectedItem.id)}>+</button>
                     <button onClick={() => handleDecreasedQuantity(selectedItem.id)}>-</button> <br></br>

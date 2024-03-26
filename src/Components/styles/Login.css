@@ -3,6 +3,19 @@
     height: 700px;
     border-style: double;
     border-color: black;
-    color:black
-    
+    color:black;
+    position: relative;
+}
+.LoginForm {
+   position: absolute; 
+   height: 400px;
+   background-color: transparent;
+   bottom: 35%;
+   margin-left: 22%;
+
+}
+
+.loginImg {
+  height: 700px;
+  width:1440px;
 }

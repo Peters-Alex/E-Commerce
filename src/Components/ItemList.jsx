@@ -45,22 +45,22 @@ export default function ItemList(props) {
     return (
         <section>
             <div className="wrapper">
-                <h2>List of Items</h2>
                 <select value={sortItems} onChange={(event) => setSortItems(event.target.value)}>
                     <option value="title">Name</option>
                     <option value="price">Price</option>
                 </select>
+                <h2>List of Items</h2>
                 <ul className="items-container">
                 {filteredItems.map((currentItem) => (
-                    <div key={currentItem.id}>
-                    <p> category: {currentItem.category} </p>
-                    <p> description:{currentItem.description} </p>
+                    <div className="productItems" key={currentItem.id}>
+                    <p> Category: {currentItem.category} </p>
+                    <p> Description:{currentItem.description} </p>
                     <p> id: {currentItem.id} </p>
-                    <img src={currentItem.image} /> 
-                    <p> price: ${currentItem.price} </p>
-                    <p> rating: {currentItem.rating.rate} </p>
-                    <p> rating count: {currentItem.rating.count} </p>
-                    <p> title: {currentItem.title} </p>
+                    <img className="ProductImg" src={currentItem.image} /> 
+                    <p> Price: ${currentItem.price} </p>
+                    <p> Rating: {currentItem.rating.rate} </p>
+                    <p> Rating Count: {currentItem.rating.count} </p>
+                    <p> Title: {currentItem.title} </p>
                         <button value ={currentItem.id } onClick={handleClick}>
                             Add to Cart
                         </button>

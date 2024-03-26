@@ -1,9 +1,15 @@
-.div.mycart {
-    width: 1440px;
-    height: 700px;
-    border-style: double;
-    border-color: black;
-}
-p{
+
+.mycart {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom:0%;
+  background-color: white;
+  padding: 20%;
+  font-size: small;
   color: black;
+
+}
+.cartimg {
+  width: 55%;
+
 }

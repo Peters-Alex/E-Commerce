@@ -37,10 +37,13 @@ function Login(props) {
 
     return (
         <div className="Login">
+
+            <img className="loginImg" src="src/assets/charlesdeluvio-_4K7BwaHUGc-unsplash.jpg" alt="store"></img>
+
             {/* error message*/}
             {errorMsg ? <p>{errorMsg}</p> : <span />}
-            <form onSubmit={eventHandler}> {/*button needs to go on the form so when it completed its submitted*/}
-            <h2> Welcome Back </h2>
+            <form className="LoginForm" onSubmit={eventHandler}> {/*button needs to go on the form so when it completed its submitted*/}
+            <h2> TrendSphere Login </h2>
                 <label>
                     Username
                     <input type="text" placeholder="Username" name="username" value={userInfo.username} onChange={onUserInput} /> <br></br>
