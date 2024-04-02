@@ -1,8 +1,7 @@
 .home > header  {
     font-size: larger;
     font-style: oblique;
-    text-align: center;
-    
+    text-align: center;  
 }
 
 h1 {
@@ -12,28 +11,25 @@ h1 {
 h2 {
     color: black
 }
-img {
-max-inline-size: none;
-height: auto;
+.Pillars {
+    font-size: small;
+}
 
+.puzzleimg {
+    height: 300px;
+    width: 275px; 
+    padding: 10%;   
+}
+.lostimg {
+    height: 300px;
+    width: 275px;
+    padding: 10%;  
+}
+.teamimg {
+    height: 300px;
+    width: 275px;
+    padding: 10%;  
 }
 div {
-    background-color: rgb(196, 247, 247);
+    display: inline-block;
 }
-
-th {
-font-style: italic;
-font-weight: bold;
-color: black;
-}
-/* .a {
-   
-    border-bottom: 100px;
-}
-.b {
-
-    word-wrap: break-word
-}
-.c {
-    word-wrap: break-word;
-} */

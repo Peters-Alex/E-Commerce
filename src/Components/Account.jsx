@@ -39,8 +39,9 @@ return (
     <div className="acountPg">
         <header> Welcome Back</header>
         {/* <NavBar /> */}
-        <div className="AccountStyle">
-            <form onSubmit={eventHandler}>
+        <div>
+        {/* <img className="accountImg"src="src/assets/clem-onojeghuo-HpEDSZukJqk-unsplash.jpg"/> */}
+            <form className="AccountStyle" onSubmit={eventHandler}>
                 <h2> Account Information </h2>
                     First Name
                     <input name="firstName" type="text" placeholder='First Name'value={userInfo.firstName} onChange={onUserInput} />

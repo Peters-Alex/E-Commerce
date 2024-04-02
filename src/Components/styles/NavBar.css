@@ -6,6 +6,9 @@ nav {
     justify-content: flex-end;
     align-items: center;
 }
+.navlink:hover {
+    background-color: rgb(177, 199, 49);
+}
 a {
     margin-right: 10px;
     display: flex;

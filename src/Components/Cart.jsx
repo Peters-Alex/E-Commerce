@@ -5,14 +5,14 @@ import {useState} from "react"
 import "./styles/Cart.css";
 import {Star} from 'phosphor-react' 
 
-const Cart = ({ cart: intialCart, updateQuantity }) => {
+const Cart = ({ cart: intialCart}) => {
 // console.log(cart)
     const [cartItems, setCartItems] = useState(intialCart)
 
-    const handleIncreaseQuantity = (selectedItem) => { 
+    const handleIncreaseQuantity = (selectedItemId) => { 
         const updateItem = cartItems.map(item => item.id === selectedItem.id ? { ...item, quantity: item.quantity + 1} : item);
         setCartItems(updateItem);
-        console.log(updateItem)
+        console.log(updateItem);
     };    
     const handleDecreasedQuantity = (selectedItem) => {
         updateQuantity(selectedItem, -1);

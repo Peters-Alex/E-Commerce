@@ -1,10 +1,14 @@
 
 
 .AccountStyle {
-    width: 1440px;
+    width: 1420px;
     height: 700px;
-    border-style: double;
-    border-color: black;
     color:black;
+   
+}
+.accountImg {
     
+    
+    position: absolute;
+
 }

@@ -25,7 +25,7 @@ function Login(props) {
             props.setToken(data.token);
             console.log(`data ${JSON.stringify(data.token)}`)
             //Todo: Change to plant list route later
-            navigate("/account");
+            navigate("/");
         }
     };
     const onUserInput = (e) => {
