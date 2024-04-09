@@ -1,0 +1,29 @@
+{
+    "slides": [
+        {
+            "src": "/src/assets/ian-schneider-TamMbr4okv4-unsplash.jpg",
+            "alt": "Image 1 from carousel"
+            
+        },
+        {
+            "src": "src/assets/md-salman-tWOz2_EK5EQ-unsplash.jpg",
+            "alt": "Image 4 from carousel" 
+        },
+        {
+            "src": "src/assets/soundtrap-5Wj_tk8_Ens-unsplash.jpg",
+            "alt": "Image 2 from carousel"
+        },
+        {
+            "src": "src/assets/hermes-rivera-OX_en7CXMj4-unsplash.jpg",
+            "alt": "Image 3 from carousel"
+        },
+        {
+            "src": "src/assets/trinity-treft-pSZJ0w_ecrA-unsplash.jpg",
+            "alt": "Image 5 from carousel"
+        },
+        {
+            "src": "src/assets/trinh-minh-th-ScYGyGhA9HQ-unsplash.jpg",
+            "alt": "Image 6 from carousel"
+        }
+    ]
+}

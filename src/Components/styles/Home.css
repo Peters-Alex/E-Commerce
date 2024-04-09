@@ -14,6 +14,11 @@ h2 {
 .Pillars {
     font-size: small;
 }
+.mainImg {
+    width: 1450px;
+    height: 370px;
+    max-inline-size: none;
+}
 
 .puzzleimg {
     height: 300px;
@@ -33,3 +38,8 @@ h2 {
 div {
     display: inline-block;
 }
+p {
+display: table-caption;
+width: 25rem;
+}
+

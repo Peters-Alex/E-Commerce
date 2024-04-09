@@ -3,6 +3,9 @@ import Checkbox from "./Checkbox";
 import Cart from "./Cart";
 import "./styles/Home.css";
 import { useState } from 'react';
+import { Carousel } from "./Carousel";
+import { slides } from "../data/carouselData.json"
+
 
 function Home({ labelOn, labelOff, }) {
     const [showDetails, setShowDetails] = useState({});
@@ -46,7 +49,8 @@ function Home({ labelOn, labelOff, }) {
                     <button onClick={() => toggleDetails('commitment')}>Commitment</button>
                     {showDetails['commitment'] && (
                     <p> Join us as we navigate the ever-evolving landscape of style, where the boundaries between the physical and digital worlds blur, and fashion becomes a form of self-expression like never before. Welcome to TrendSphere—where the future of fashion awaits.</p>)}
-                </div>
+                </div><br></br>
+                <Carousel data={slides}/>
             </section>
 <Checkbox labelOn={labelOn} labelOff={labelOff} />
 
