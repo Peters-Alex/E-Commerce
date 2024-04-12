@@ -9,6 +9,7 @@ import NavBar from './Components/NavBar';
 import Register from './Components/Register';
 import Account from "./Components/Account";
 import Products from "./Components/Products";
+import Footer from "./Components/Footer";
 
 
 
