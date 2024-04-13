@@ -1,14 +1,6 @@
-
-
-.AccountStyle {
-    width: 1420px;
-    height: 700px;
-    color:black;
-   
+.accountPg {
+    background-color: rgb(255, 250, 250)
 }
-.accountImg {
+.AccountStyle {
     
-    
-    position: absolute;
-
 }

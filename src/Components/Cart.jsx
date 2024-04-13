@@ -34,16 +34,16 @@ const Cart = ({ cart: intialCart}) => {
                 <ul>
                 <h1>Shopping Cart</h1>
                  {cartItems.map((selectedItem) => (      
-                    <li key={selectedItem.id}>
+                    <li className="IndivdualProduct"key={selectedItem.id}>
                     <p> Category: {selectedItem.category} </p>
                     <p> Description:{selectedItem.description} </p>
                     <p> Id: {selectedItem.id} </p>
-                    <img className="cartimg"src={selectedItem.image} /> 
                     <p> Price: ${selectedItem.price} </p>
                     <p> Rating: {selectedItem.rating.rate} </p>
                     <p> <Star/><Star/><Star/><Star/> Rating count: {selectedItem.rating.count} </p>
                     <p> Title: {selectedItem.title} </p> 
                     {selectedItem.name} - Quantity: {selectedItem.quantity} - Price: {selectedItem.price}<br></br>
+                    <img className="cartimg"src={selectedItem.image} /> 
                     <button onClick={() => handleIncreaseQuantity(selectedItem.id)}>+</button>
                     <button onClick={() => handleDecreasedQuantity(selectedItem.id)}>-</button> <br></br>
                     <button onClick={handleCheckout}> Checkout</button>

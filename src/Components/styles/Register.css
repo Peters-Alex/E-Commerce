@@ -1,18 +1,19 @@
 div {
-   
     text-align: center;
     font-size: larger;
+    width: 1490px;
+    
 }
 img {
-    width: 1450px;
+    width: 1490px;
     height: 270px; 
     max-inline-size: none;
 }
 .Register > form {
     background-color: rgb(191, 233, 234);
-    margin: 30rem;
+    margin: 25rem;
+    margin-bottom: 10rem;
     margin-top: 1rem;
-    width: 20rem;
     font-style: normal;
     font-size: large;
     display:grid;
@@ -20,5 +21,7 @@ img {
     border-color: black;
     border-style: double;
     border-width: 10px;
+
     
 }
+

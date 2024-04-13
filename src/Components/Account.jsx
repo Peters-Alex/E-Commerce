@@ -8,7 +8,7 @@ function Account(props) {
     const navigate = useNavigate();
     const [errorMsg, setError] = useState(null)
 
-    const [userInfo, setUserInfo] = useState({ firstName: "", lastName: "", email: "", homeAddress: "", shipping: "", city: "", state: "", zip: "", card: "", securityCode: "", message: "" });
+    const [userInfo, setUserInfo] = useState({ firstName: "", lastName: "", email: "", homeAddress: "", shipping: "", city: "", state: "", zip: "", card: "", securityCode: "", message: "", expiration: ""});
 
 
     const onUserInput = (e) => {
@@ -36,7 +36,7 @@ const eventHandler = async (event) => {
 
 
 return (
-    <div className="acountPg">
+    <div className="accountPg">
         <header> Welcome Back</header>
         {/* <NavBar /> */}
         <div>
@@ -63,12 +63,13 @@ return (
                     <input name="card" type="text" placeholder="Card Number" value={userInfo.card} onChange={onUserInput}/>
                     CC
                     <input name="securityCode" type="text" placeholder="CC" value={userInfo.securityCode} onChange={onUserInput}/><br></br>
-
+                    Exp Date
+                    <input name="Expiration" type="text" placeholder="Expiration" value={userInfo.expiration} onChange={onUserInput}/><br></br>
                     Message
                     <input name="message" type="text" placeholder="Deliver Instructions" value={userInfo.message} onChange={onUserInput}/> <br></br>
 
 
-                <button> CheckOut  </button>
+                <button> Update Account  </button>
 
             </form>
 

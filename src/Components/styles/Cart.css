@@ -10,6 +10,9 @@
 
 }
 .cartimg {
-  width: 55%;
+  width: 35%;
 
+}
+.IndivdualProduct{
+  display: -webkit-inline-box;
 }

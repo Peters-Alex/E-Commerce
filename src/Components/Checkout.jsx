@@ -6,7 +6,7 @@ export default function Checkout() {
         <section>
             <NavBar />
 
-        <div>
+        <div className="Nav">
             <h1> CheckOut</h1>
             
             <form> {/*button needs to go on the form so when it completed its submitted*/}
