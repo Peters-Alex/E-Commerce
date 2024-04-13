@@ -47,11 +47,11 @@
 .indicator {
     height: .5rem;
     width: .5rem;
-    border-radius: 200%;
-    border: none;
+    border-radius: 1%;
+    
     outline: none;
-    box-shadow: px 0px 5rem #555;
-    margin:  .01rem;
+    box-shadow: 1rem #555;
+    margin:  .1rem;
     cursor: pointer;
 ;
 }

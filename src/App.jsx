@@ -36,6 +36,7 @@ function App() {
           <Route path="/register" element={<Register setToken={setToken}/>} />
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer token={token} setToken={setToken}/>
 
     </div>
   );

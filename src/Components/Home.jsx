@@ -22,7 +22,6 @@ function Home({ labelOn, labelOff, }) {
     const playerRef = useRef(null);
     const handleReady = () =>{
         playerRef.current.play;
-    
     }
 
    
@@ -65,7 +64,7 @@ function Home({ labelOn, labelOff, }) {
                 <Carousel data={slides} />
             </section>
             <Checkbox labelOn={labelOn} labelOff={labelOff} />
-            <Footer> </Footer>
+          
 
 
         </div>
