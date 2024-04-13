@@ -6,28 +6,39 @@ import { useState } from 'react';
 import { Carousel } from "./Carousel";
 import { slides } from "../data/carouselData.json";
 import  Footer  from "./Footer";
+import ReactPlayer from "react-player";
+import { useRef } from "react";
 
 
 function Home({ labelOn, labelOff, }) {
     const [showDetails, setShowDetails] = useState({});
-
+    
     const toggleDetails = (pillar) => {
         setShowDetails(prevState => ({
             ...prevState,
             [pillar]: !prevState[pillar]
         }));
     };
+    const playerRef = useRef(null);
+    const handleReady = () =>{
+        playerRef.current.play;
+    
+    }
 
+   
+    
 
+  
+    
     return (
         <div className="Home">
             <header>
                 <h1> TrendSphere </h1>
+            <main>
+                <ReactPlayer ref={playerRef} url="src/assets/7334662-hd_1920_1080_24fps.mp4" controls={true} loop={true} onReady={handleReady}/>
+            </main>
                 <h2> The future of fashion design delivered right to your finger tips </h2>
             </header>
-            <main>
-                <img className="mainImg" src="src/assets/35187215-D078-4633-AE23-9DD7A0269CF3_1_105_c.jpeg" alt="shopping"></img>
-            </main>
 
             <section className="Pillars">
                 <div>
