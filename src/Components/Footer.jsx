@@ -1,28 +1,38 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import {useState} from "react";
+import { useState } from "react";
 import "./styles/Footer.css"
 
 
  function Footer() {
+    const [errorMsg, setError] = useState();
     const[formData, setFormdata] = useState({
         name: "",
         email: "",
         message: "",
-    })
+    });
     //function to handle form input changes
     const handleChange = (e) => {
-        const { name, value } =e.targert;
-        setFormdata({...formData,[name]: value });
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
+      if (errorMsg) {
+        setError(null);
+    }
+      const { name, value } = e.target;
         
-        console.log(formData);
+        setFormdata(prevState => ({
+          ...prevState,[name]: value, 
+        }));
+      };
 
-        setFormdata({ name: "", email: "", message: "" });
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        // setFormdata({ name: "", email: "", message: "" });
     };
     
+    const handleContactUs = () => {
+      alert("Thank you for reaching out. Someone will follow up with you on the email listed.")
+    };
+
+
     return (
         <footer className="footer">
           <div className="columna">
@@ -45,8 +55,8 @@ import "./styles/Footer.css"
             <form className="Form" onSubmit={handleSubmit}>
                 <h3>Contact Us</h3>
               <input
-                type="text"
                 name="name"
+                type="text"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
@@ -60,11 +70,12 @@ import "./styles/Footer.css"
               /><br></br>
               <textarea
                 name="message"
+                type="text"
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
               /><br></br>
-              <button type="submit">Submit</button>
+              <button onClick={handleContactUs}>Submit</button>
             </form>
         </footer>
       );

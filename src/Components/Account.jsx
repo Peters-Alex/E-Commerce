@@ -21,8 +21,6 @@ function Account(props) {
             ...prevState,
             [name]: value,
         }));
-
-
      };
 
 

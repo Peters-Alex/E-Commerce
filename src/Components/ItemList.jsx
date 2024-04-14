@@ -11,7 +11,7 @@ export default function ItemList(props) {
     const [filteredItems, setFilteredItems] = useState([]);
     const [sortItems, setSortItems] = useState("title")
     const [isAscending, setIsAscending] = useState(true);
- 
+    const [showDetails, setShowDetails] = useState({});
     
     useEffect(() => {
         if(!isLoading && !error && data) {
@@ -30,6 +30,12 @@ export default function ItemList(props) {
         setFilteredItems(sorted);
     }, [sortItems, isAscending]);
 
+    const toggleDetails = (itemId) => {
+        setShowDetails(prevState => ({
+            ...prevState,
+            [itemId]: !prevState[itemId]
+        }));
+    };
 
     
     const handleClick = (event) => {
@@ -40,7 +46,7 @@ export default function ItemList(props) {
         console.log(props.cart);
     }
 
- 
+    
 
     return (
         <section>
@@ -53,14 +59,19 @@ export default function ItemList(props) {
                 <ul className="items-container">
                 {filteredItems.map((currentItem) => (
                     <div className="productItems" key={currentItem.id}>
-                    <p> Category: {currentItem.category} </p>
-                    <p> Description:{currentItem.description} </p>
-                    <p> id: {currentItem.id} </p>
+                        <p> Title: {currentItem.title} </p>
                     <img className="ProductImg" src={currentItem.image} /> 
                     <p> Price: ${currentItem.price} </p>
                     <p> Rating: {currentItem.rating.rate} </p>
-                    <p> Rating Count: {currentItem.rating.count} </p>
-                    <p> Title: {currentItem.title} </p>
+                    <button className="itemsButton" onClick={() => toggleDetails(currentItem.id)}>Product Details</button>
+                    {showDetails[currentItem.id] && (
+                        <div>
+                        <p> Category: {currentItem.category} </p>
+                        <p> Description:{currentItem.description} </p>
+                        <p> id: {currentItem.id} </p>
+                        <p> Rating Count: {currentItem.rating.count} </p>
+                        </div>
+                    )}
                         <button value ={currentItem.id } onClick={handleClick}>
                             Add to Cart
                         </button>
