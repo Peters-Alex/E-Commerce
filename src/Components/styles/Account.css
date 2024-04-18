@@ -1,6 +1,11 @@
 .accountPg {
-    background-color: rgb(255, 250, 250)
+  
+    align-items: center;
 }
 .AccountStyle {
-    
+    margin-left: 35%;
+    margin-top: 10%;
+    font-size: larger;
+    align-items: center;
+   
 }

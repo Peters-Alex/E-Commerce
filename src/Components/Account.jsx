@@ -35,7 +35,7 @@ const eventHandler = async (event) => {
 
 return (
     <div className="accountPg">
-        <header> Welcome Back</header>
+        
         {/* <NavBar /> */}
         <div>
         {/* <img className="accountImg"src="src/assets/clem-onojeghuo-HpEDSZukJqk-unsplash.jpg"/> */}

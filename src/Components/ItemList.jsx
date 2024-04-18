@@ -3,6 +3,7 @@ import { useProductsQuery } from "../redux/api";
 import Cart from "./Cart";
 import NavBar from "./NavBar";
 import "./styles/ItemList.css";
+import { Star } from "phosphor-react";
 
 
 
@@ -46,7 +47,13 @@ export default function ItemList(props) {
         console.log(props.cart);
     }
 
-    
+    const generateStar = (count) => {
+        const stars = [];
+        for (let i = 0; i < count; i++) {
+            stars.push(<Star key={i}/>)
+        }
+        return stars
+    };
 
     return (
         <section>
@@ -59,22 +66,22 @@ export default function ItemList(props) {
                 <ul className="items-container">
                 {filteredItems.map((currentItem) => (
                     <div className="productItems" key={currentItem.id}>
-                        <p> Title: {currentItem.title} </p>
+                    <p className="p2"> Title: {currentItem.title} </p>
                     <img className="ProductImg" src={currentItem.image} /> 
-                    <p> Price: ${currentItem.price} </p>
-                    <p> Rating: {currentItem.rating.rate} </p>
-                    <button className="itemsButton" onClick={() => toggleDetails(currentItem.id)}>Product Details</button>
-                    {showDetails[currentItem.id] && (
-                        <div>
-                        <p> Category: {currentItem.category} </p>
-                        <p> Description:{currentItem.description} </p>
-                        <p> id: {currentItem.id} </p>
-                        <p> Rating Count: {currentItem.rating.count} </p>
-                        </div>
-                    )}
+                    <p className="p2"> Price: ${currentItem.price} </p>
+                    <p className="p2"> Rating: {generateStar(currentItem.rating.rate)} </p>
                         <button value ={currentItem.id } onClick={handleClick}>
                             Add to Cart
                         </button>
+                    <button className="itemsButton" onClick={() => toggleDetails(currentItem.id)}>Product Details</button>
+                    {showDetails[currentItem.id] && (
+                        <div>
+                        <p className="p1"> Category: {currentItem.category} </p>
+                        <p className="p1"> Description:{currentItem.description} </p>
+                        <p className="p1"> id: {currentItem.id} </p>
+                        <p className="p1"> Rating Count: {currentItem.rating.count} </p>
+                        </div>
+                    )}
                 
                         </div>                    
                      ))}
