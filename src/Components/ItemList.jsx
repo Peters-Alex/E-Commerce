@@ -42,10 +42,27 @@ export default function ItemList(props) {
     const handleClick = (event) => {
         const productId = event.target.value;
         const product = data.find((item) => item.id == productId);
+
+        const existingProductIndex = props.cart.findIndex((item) => item.id == productId)
+
+        if(existingProductIndex !== -1) {
+            const updatedCart = [...props.cart];
+            const existingProduct = updatedCart [existingProductIndex]; 
+            existingProduct.quantity += 1; 
+            existingProduct.totalPrice += existingProduct.price;
+            props.setCart(updatedCart);
+        } else {
+            const newProduct = {...product, quantity: 1, totalPrice: product.price};
+            props.setCart((cart) => [...cart, newProduct]);
+        }
         
-        props.setCart((Cart) => [...Cart, product]); 
-        console.log(props.cart);
+        // props.setCart((Cart) => [...Cart, product]); 
+        // console.log(props.cart);
     }
+    
+
+    
+     
 
     const generateStar = (count) => {
         const stars = [];
@@ -62,7 +79,7 @@ export default function ItemList(props) {
                     <option value="title">Name</option>
                     <option value="price">Price</option>
                 </select>
-                <h2>List of Items</h2>
+                <h2 className="itemHeader">InStock Items</h2>
                 <ul className="items-container">
                 {filteredItems.map((currentItem) => (
                     <div className="productItems" key={currentItem.id}>
@@ -92,6 +109,3 @@ export default function ItemList(props) {
         </section>
         );
     }
-
-// My item list are not rendering on the page.I thiknk that it is an error in how im fetching my data. 
-// The item key seems to be wrong withing the object.

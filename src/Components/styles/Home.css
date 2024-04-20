@@ -1,13 +1,15 @@
-div.Home {
+.Home {
     background-color: rgb(229, 229, 243);
-    width: 93rem;
-    align-items: center;
-    
+    width: 100%;
+    align-content: center;
 }
-.home > header  {
+.home.header  {
     font-size: larger;
     font-style: oblique;
     text-align: center;  
+}
+.Home.main {
+    display: flex;
 }
 
 h1 {
@@ -18,7 +20,15 @@ h2 {
     color: black
 }
 .Pillars {
-    font-size: small;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    width: .01%
+    
+}
+.homeDiv {
+  margin: auto; 
+
 }
 
 .puzzleimg {
@@ -34,18 +44,28 @@ h2 {
 .teamimg {
     height: 300px;
     width: 275px;
-    padding: 1%;  
+    padding: 1%; 
+     
 }
-.homeDiv {
-    display: math;
-    
-}
+
 
 p {
 display: table-caption;
 width: 25rem;
 }
 .HomeButton{
-    align-items: ;
+    padding: 10px 30px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
+.HomeButton button:hover {
+    background-color: #0056b3;
+}
+.main {
+  position: flex;
+}
