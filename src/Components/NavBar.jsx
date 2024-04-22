@@ -35,7 +35,8 @@ function NavBar(props) {
             <nav>
                 <NavLink to="/" className="bar"> <House/> </NavLink> <br></br>
                 <NavLink to="/register"><UserCirclePlus/></NavLink> <br></br>
-
+                <NavLink to="/ItemList"><Storefront></Storefront></NavLink> <br></br>
+                <NavLink to="/Cart"><ShoppingCart /> </NavLink> <br></br>
                 {/* <NavLink to="/ItemList">Item List</NavLink> <br></br>
                 <NavLink to="/Cart">Cart<ShoppingCart /> </NavLink> <br></br> */}
                 <a onClick={() => navigate("/login")}><UserCircle/></a>

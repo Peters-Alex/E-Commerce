@@ -35,6 +35,8 @@ function App() {
           <Route path="/account" element={<Account setToken={setToken}/>} />
           <Route path="/register" element={<Register setToken={setToken}/>} />
           <Route path="/" element={<Home />} />
+          <Route path="/itemList" element={<ItemList setCart={setCart} cart={cart} token={token} />} /> 
+          <Route path="/Cart" element={<Cart setCart={setCart} cart={cart} token={token} />} />
         </Routes>
         <Footer token={token} setToken={setToken}/>
 
@@ -43,3 +45,4 @@ function App() {
 
 }
 export default App
+//Line38 ItemList allows for users to see with itemList with out a token.
