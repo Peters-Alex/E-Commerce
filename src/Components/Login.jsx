@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../redux/api"
-import NavBar from "./NavBar";
 import "./styles/Login.css";
 
 function Login(props) {
@@ -38,7 +37,7 @@ function Login(props) {
     return (
         <div className="Login">
 
-            <img className="loginImg" src="public/assets/charlesdeluvio-_4K7BwaHUGc-unsplash.jpg"></img>
+            <img className="loginImg" src="/assets/charlesdeluvio-_4K7BwaHUGc-unsplash.jpg"></img>
 
             {/* error message*/}
             {errorMsg ? <p>{errorMsg}</p> : <span />}

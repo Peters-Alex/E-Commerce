@@ -33,7 +33,7 @@ function Home({ labelOn, labelOff, }) {
 
             <section className="Pillars">
                 <div className="homeDiv">
-                    <img className="puzzleimg" src="public/assets/oswald-elsaboath-6xFVjaGtA3M-unsplash.jpg" alt="puzzle"></img>
+                    <img className="puzzleimg" src="/assets/oswald-elsaboath-6xFVjaGtA3M-unsplash.jpg" alt="puzzle"></img>
                     <button className="HomeButton" onClick={() => toggleDetails('who')}>Who We Are</button>
                     {showDetails['who'] && (
                         <p> Our story began with a vision: to create a dynamic platform that seamlessly integrates cutting-edge technology with the artistry of fashion. We're not just a website; we're a destination for trendsetters, tastemakers, and seekers of sartorial innovation.</p>
@@ -41,7 +41,7 @@ function Home({ labelOn, labelOff, }) {
                 </div>
 
                 <div className="homeDiv">
-                    <img className="lostimg" src="public/assets/jon-tyson-tXsZrKdazDk-unsplash.jpg" alt="lost"></img><br></br>
+                    <img className="lostimg" src="/assets/jon-tyson-tXsZrKdazDk-unsplash.jpg" alt="lost"></img><br></br>
                     <button className="HomeButton" onClick={() => toggleDetails('why')}>Why We Serve</button>
                     {showDetails['why'] && (
                         <p> Step into our virtual showroom, where curated collections curated by our team of fashion aficionados await. From haute couture to street style, we've curated the latest looks from across the globe, ensuring that you stay ahead of the curve with every purchase.
@@ -49,7 +49,7 @@ function Home({ labelOn, labelOff, }) {
                             But TrendSphere is more than just a marketplace its a community. Connect with fellow fashion enthusiasts, share style inspiration, and discover emerging designers who are shaping the future of fashion.</p>)}
                 </div>
                 <div className="homeDiv">
-                    <img className="teamimg" src="public/assets/jed-villejo-pumko2FFxY0-unsplash.jpg"></img>
+                    <img className="teamimg" src="/assets/jed-villejo-pumko2FFxY0-unsplash.jpg"></img>
                     <button className="HomeButton" onClick={() => toggleDetails('commitment')}>Commitment</button>
                     {showDetails['commitment'] && (
                         <p> Join us as we navigate the ever-evolving landscape of style, where the boundaries between the physical and digital worlds blur, and fashion becomes a form of self-expression like never before. Welcome to TrendSphere—where the future of fashion awaits.</p>)}
