@@ -5,14 +5,14 @@ import "./styles/Home.css";
 import { useState } from 'react';
 import { Carousel } from "./Carousel";
 import { slides } from "../data/carouselData.json";
-import  Footer  from "./Footer";
+import Footer from "./Footer";
 import ReactPlayer from "react-player";
 import { useRef } from "react";
 
 
 function Home({ labelOn, labelOff, }) {
     const [showDetails, setShowDetails] = useState({});
-    
+
     const toggleDetails = (pillar) => {
         setShowDetails(prevState => ({
             ...prevState,
@@ -20,22 +20,17 @@ function Home({ labelOn, labelOff, }) {
         }));
     };
     const playerRef = useRef(null);
-    const handleReady = () =>{
+    const handleReady = () => {
         playerRef.current.play;
     }
 
-   
-    
-
-  
-    
     return (
         <div className="Home">
             <header>
                 <h1> TrendSphere </h1>
-            <main>
-                <ReactPlayer ref={playerRef} url="src/assets/7334662-hd_1920_1080_24fps.mp4" controls={true} loop={true} onReady={handleReady}/>
-            </main>
+                <main>
+                    <ReactPlayer ref={playerRef} url="src/assets/7334662-hd_1920_1080_24fps.mp4" controls={true} loop={true} onReady={handleReady} />
+                </main>
                 <h2> The future of fashion design delivered right to your finger tips </h2>
             </header>
 
@@ -44,11 +39,12 @@ function Home({ labelOn, labelOff, }) {
                     <img className="puzzleimg" src="src/assets/oswald-elsaboath-6xFVjaGtA3M-unsplash.jpg" alt="puzzle"></img>
                     <button className="HomeButton" onClick={() => toggleDetails('who')}>Who We Are</button>
                     {showDetails['who'] && (
-                        <p> Our story began with a vision: to create a dynamic platform that seamlessly integrates cutting-edge technology with the artistry of fashion. We're not just a website; we're a destination for trendsetters, tastemakers, and seekers of sartorial innovation.</p>)}
+                        <p> Our story began with a vision: to create a dynamic platform that seamlessly integrates cutting-edge technology with the artistry of fashion. We're not just a website; we're a destination for trendsetters, tastemakers, and seekers of sartorial innovation.</p>
+                    )}
                 </div>
 
                 <div className="homeDiv">
-                    <img className="lostimg" src="src/assets/jon-tyson-tXsZrKdazDk-unsplash.jpg" alt="lost"></img>
+                    <img className="lostimg" src="src/assets/jon-tyson-tXsZrKdazDk-unsplash.jpg" alt="lost"></img><br></br>
                     <button className="HomeButton" onClick={() => toggleDetails('why')}>Why We Serve</button>
                     {showDetails['why'] && (
                         <p> Step into our virtual showroom, where curated collections curated by our team of fashion aficionados await. From haute couture to street style, we've curated the latest looks from across the globe, ensuring that you stay ahead of the curve with every purchase.
@@ -64,7 +60,7 @@ function Home({ labelOn, labelOff, }) {
                 <Carousel data={slides} />
             </section>
             <Checkbox labelOn={labelOn} labelOff={labelOff} />
-          
+
 
 
         </div>
