@@ -38,7 +38,7 @@ function Login(props) {
     return (
         <div className="Login">
 
-            <img className="loginImg" src="src/assets/charlesdeluvio-_4K7BwaHUGc-unsplash.jpg" alt="store"></img>
+            <img className="loginImg" src="public/assets/charlesdeluvio-_4K7BwaHUGc-unsplash.jpg"></img>
 
             {/* error message*/}
             {errorMsg ? <p>{errorMsg}</p> : <span />}
