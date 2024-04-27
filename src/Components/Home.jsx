@@ -56,7 +56,7 @@ function Home({ labelOn, labelOff, }) {
                 <div></div>
                 <Carousel data={slides} />
             </div>
-            <Checkbox labelOn={labelOn} labelOff={labelOff} />
+        <Checkbox labelOn={labelOn} labelOff={labelOff} />
         </div>
     );
 }

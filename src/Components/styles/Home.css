@@ -1,6 +1,6 @@
 .Home {
-    background-color:rgb(183, 179, 179);
-    width: 100%;
+    background-color:rgb(143, 104, 104);
+   max-width: ma-content;
     align-content: center;  
 }
 
@@ -16,6 +16,7 @@ video{
     font-size: xxx-large;
     font-style: oblique;
     text-align: center; 
+   
 }
 .header2  {
     font-size: xxx-large;
@@ -26,8 +27,8 @@ video{
 .Pillars {
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 1%;
-    width: .01%
+    margin-left: 20%;
+ 
     
 }
 .homeDiv1 {
@@ -60,6 +61,7 @@ video{
 p {
 display: table-caption;
 width: 25rem;
+
 }
 .HomeButton{
     padding: 10px 30px;
@@ -74,6 +76,4 @@ width: 25rem;
 .HomeButton button:hover {
     background-color: #0056b3;
 }
-.Carousel {
-    margin-left: 100%;
-}
+
