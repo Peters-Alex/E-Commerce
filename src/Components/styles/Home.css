@@ -1,35 +1,43 @@
 .Home {
     background-color:rgb(183, 179, 179);
     width: 100%;
-    margin-left: auto;
-    align-content: center;
-}
-.home.header  {
-    font-size: larger;
-    font-style: oblique;
-    text-align: center;  
-}
-.Home.main {
-    display: flex;
+    align-content: center;  
 }
 
-h1 {
+video{
+    margin-left: 70%;
+    width: 100px;
+    height: 100px;
+}
+.header0 {
+    margin-top: -3%;
+}
+.header1  {
+    font-size: xxx-large;
     font-style: oblique;
-    color: black  
+    text-align: center; 
 }
-h2 {
-    color: black
+.header2  {
+    font-size: xxx-large;
+    font-style: oblique;
+    text-align: center; 
 }
+
 .Pillars {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto auto auto;
     gap: 1%;
     width: .01%
     
 }
-.homeDiv {
-  margin: auto; 
-
+.homeDiv1 {
+    width: min-content;
+   }
+.homeDiv2 {
+ width: min-content;
+}
+.homeDiv3 {
+    width: min-content;
 }
 
 .puzzleimg {
@@ -47,9 +55,6 @@ h2 {
     width: 275px;
     padding: 1%; 
      
-}
-.video{
-    margin-right: 100%;
 }
 
 p {
@@ -69,6 +74,6 @@ width: 25rem;
 .HomeButton button:hover {
     background-color: #0056b3;
 }
-.main {
-  position: flex;
+.Carousel {
+    margin-left: 100%;
 }
